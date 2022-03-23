@@ -4,7 +4,7 @@ Feature: Eine Person möchte unser Formular ausfüllen.
   Scenario: Ausfüllen ohne Übernahme der persönlichen Daten aus dem Bestand
     Given die Person hat ein Formular ausgefüllt
     When die Person das Formular einreicht
-    Then die Person erhält eine Bestätigungs-E-Mail
+    Then erhält die Person eine Bestätigungs-E-Mail
 
   Scenario: Keine Telefonnummer bei der Person angegeben
     Given die Person erfasst die persönlichen Angaben
@@ -12,6 +12,7 @@ Feature: Eine Person möchte unser Formular ausfüllen.
     When die Person ihre Angaben speichert
     Then kommt ein Hinweis auf die fehlende Nummer
 
+ @nichtTesten
 Scenario Outline: Person waehlt die Vorgangsart aus
   Given die Person ist auf der Seite <VorgangsartAuswaehlen>
   When die Person StartenEinesVorgangs waehlt
@@ -20,7 +21,7 @@ Scenario Outline: Person waehlt die Vorgangsart aus
   Then die Person ist auf der Seite VorgangErstellenPerson
   Examples:
     |VorgangsartAusWaehlen
-    |ErteilungErlaubnis
-    |EintragungVermittlerregister
+    |Formular1
+    |Formular2
 
 

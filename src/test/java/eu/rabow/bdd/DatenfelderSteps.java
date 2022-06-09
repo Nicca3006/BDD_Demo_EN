@@ -13,40 +13,9 @@ import static org.junit.Assert.*;
 public class DatenfelderSteps {
     Person person;
 
-    @Given("eine Person wird angelegt")
+    @Angenommen("eine Person wird angelegt")
     public void einePersonWirdAngelegt() {
-        person = new Person();
-    }
-
-    @When("der Name {string} eingetragen wird")
-    public void derNameEingetragenWird(String name) {
-        person.setName(name);
-    }
-
-    @Then("wird der Name {string} gespeichert")
-    public void wirdDerNameGespeichert(String name) {
-        assertEquals(name, person.getName());
-    }
-
-    @Then("wird die Meldung {string} ausgegeben")
-    public void wirdDieMeldungAusgegeben(String fehlermeldung) {
-        assertTrue (validiere(person).contains(fehlermeldung));
-    }
-
-    @When("das Geburtsdatum {string} eingetragen wird")
-    public void dasGeburtsdatumEingetragenWird(String geburtsdatum) {
-        person.setGeburtsdatum(geburtsdatum);
-    }
-
-    @Then("wird das Geburtsdatum {string} gespeichert")
-    public void wirdDasGeburtsdatumGespeichert(String geburtsdatum) {
-        assertEquals(LocalDate.parse(geburtsdatum, DateTimeFormatter.ofPattern("dd.MM.yyyy")),person.getGeburtsdatum());
-    }
-
-    @When("das Geburtsdatum nicht eingetragen wird")
-    public void dasGeburtsdatumNichtEingetragenWird()  {
-        person.setGeburtsdatum("");
-        //throw new PendingException();
+        throw new PendingException();
     }
 
     @Angenommen("eine Person gibt ihr Geburtsdatum ein")
@@ -115,5 +84,15 @@ public class DatenfelderSteps {
     public void derNameNichtEingetragenWird() {
         // Write code here that turns the phrase above into concrete actions
         person.setName("");
+    }
+
+    @Dann("wird die Meldung {string} ausgegeben")
+    public void wirdDieMeldungAusgegeben(String fehlermeldung) {
+        assertTrue (validiere(person).contains(fehlermeldung));
+    }
+
+    @Wenn("das Geburtsdatum nicht eingetragen wird")
+    public void dasGeburtsdatumNichtEingetragenWird() {
+        person.setGeburtsdatum("");
     }
 }

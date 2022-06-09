@@ -4,14 +4,13 @@ import io.cucumber.java.PendingException;
 import io.cucumber.java.en.*;
 import io.cucumber.java.de.*;
 
-import javax.swing.text.DateFormatter;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
 import static eu.rabow.bdd.Validator.validiere;
 import static org.junit.Assert.*;
 
-public class DataDictionarySteps {
+public class DatenfelderSteps {
     Person person;
 
     @Given("eine Person wird angelegt")
@@ -46,7 +45,8 @@ public class DataDictionarySteps {
 
     @When("das Geburtsdatum nicht eingetragen wird")
     public void dasGeburtsdatumNichtEingetragenWird()  {
-        throw new PendingException();
+        person.setGeburtsdatum("");
+        //throw new PendingException();
     }
 
     @Angenommen("eine Person gibt ihr Geburtsdatum ein")
@@ -56,7 +56,7 @@ public class DataDictionarySteps {
     }
     @Angenommen("die Person gibt ihren Namen ein")
     public void die_person_gibt_ihren_namen_ein() {
-        // Write code here that turns the phrase above into concrete actions
+        // person.setName();
         throw new io.cucumber.java.PendingException();
     }
     @Wenn("der Name nicht mehr als {int} Zeichen hat")
@@ -112,8 +112,8 @@ public class DataDictionarySteps {
     }
 
     @Wenn("der Name nicht eingetragen wird")
-    public void der_name_nicht_eingetragen_wird() {
+    public void derNameNichtEingetragenWird() {
         // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
+        person.setName("");
     }
 }

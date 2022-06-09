@@ -16,9 +16,3 @@ Scenario Outline:
    | "--.01.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
    | "00.12.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
    | "32.01.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "30.02.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "31.04.2000" |  "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "32.05.2000" |"Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "31.06.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "31.11.2000" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
-   | "29.02.2001" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |

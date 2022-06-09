@@ -8,26 +8,31 @@ public class Person {
     private String name;
     private LocalDate geburtsdatum;
     boolean geburtsdatumHatRichtigesFormat = true;
+    boolean geburtsdatumIstVorhanden = false;
+    boolean nameIstVorhanden = false;
 
     public LocalDate getGeburtsdatum() {
         return geburtsdatum;
     }
 
     public void setGeburtsdatum(String geburtsdatum) {
-        try{
+        if (!geburtsdatum.isEmpty()){
+            geburtsdatumIstVorhanden = true;
+            try{
             this.geburtsdatum = (LocalDate.parse(geburtsdatum, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
-        }catch (DateTimeParseException e){
-        geburtsdatumHatRichtigesFormat = false;
-    }
-    }
+            }catch (DateTimeParseException e){
+            geburtsdatumHatRichtigesFormat = false;
+    }}}
 
     public String getName() {
         return name;
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (!name.isEmpty()) {
+            nameIstVorhanden = true;
+            this.name = name;
+        }
     }
-
 
 }

@@ -20,13 +20,27 @@ public class DatenfelderSteps {
 
     @Angenommen("eine Person gibt ihr Geburtsdatum ein")
     public void einePersonGibtIhrGeburtsdatumEin() {
-//        person.setGeburtsdatum();
         throw new PendingException();
     }
+
     @Angenommen("die Person gibt ihren Namen ein")
     public void die_person_gibt_ihren_namen_ein() {
-        // person.setName();
         throw new io.cucumber.java.PendingException();
+    }
+
+    @Wenn("der Name nicht eingetragen wird")
+    public void derNameNichtEingetragenWird() {
+        person.setName("");
+    }
+
+    @Dann("wird die Meldung {string} ausgegeben")
+    public void wirdDieMeldungAusgegeben(String fehlermeldung) {
+        assertTrue (validiere(person).contains(fehlermeldung));
+    }
+
+    @Wenn("das Geburtsdatum nicht eingetragen wird")
+    public void dasGeburtsdatumNichtEingetragenWird() {
+        person.setGeburtsdatum("");
     }
     @Wenn("der Name nicht mehr als {int} Zeichen hat")
     public void der_name_nicht_mehr_als_zeichen_hat(Integer int1) {
@@ -78,21 +92,5 @@ public class DatenfelderSteps {
     public void das_geburtsdatum_einen_validierungsfehler_enthaelt() {
         // Write code here that turns the phrase above into concrete actions
         throw new io.cucumber.java.PendingException();
-    }
-
-    @Wenn("der Name nicht eingetragen wird")
-    public void derNameNichtEingetragenWird() {
-        // Write code here that turns the phrase above into concrete actions
-        person.setName("");
-    }
-
-    @Dann("wird die Meldung {string} ausgegeben")
-    public void wirdDieMeldungAusgegeben(String fehlermeldung) {
-        assertTrue (validiere(person).contains(fehlermeldung));
-    }
-
-    @Wenn("das Geburtsdatum nicht eingetragen wird")
-    public void dasGeburtsdatumNichtEingetragenWird() {
-        person.setGeburtsdatum("");
     }
 }

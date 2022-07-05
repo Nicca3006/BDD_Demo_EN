@@ -1,4 +1,4 @@
-Feature: Detaillierte Tests zu den Daten einer Person
+Feature: Als nutzende Person möchte ich meine Daten erfassen, um diese später übermitteln zu können.
   Background:
     Given eine Person wird angelegt
 

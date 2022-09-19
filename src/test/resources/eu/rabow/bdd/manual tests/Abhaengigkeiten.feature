@@ -3,12 +3,12 @@ Feature: Wenn unser Kunde ein Verein ist, dann wollen wir nicht nur den Namen wi
   Um den Passierschein A38 zu erhalten, braucht es keinen Supernachweis. Wenn hier auch NICHT Kindergarten ausgewählt ist, dann brauchen wir auch keinen Versicherungsnachweis
 
   Background:
-  Nutzende Person loggt sich ein
+    Given Nutzende Person loggt sich ein
     And nutzende Person bearbeitet einen Vorgang
     And nutzende Person schliesst mehrere Schritte erstmal ab
     Given nutzende Person befindet sich auf der Seite Verein
 
-  Scenario:
+  Scenario: Es handelt sich um einen Verein in Gründung
     When Radiobutton VereinInGründung ist aktiviert
     Then Eingabetextfeld "Im Vereinsregister eingetragener Name"* ist Pflichtfeld
     And Eingabetextfeld “Straße”* ist Pflichtfeld
@@ -25,8 +25,8 @@ Feature: Wenn unser Kunde ein Verein ist, dann wollen wir nicht nur den Namen wi
     And keine weiteren Eingabefelder sind vorhanden
     And Buttonleiste ist vorhanden
 
-  Scenario:
-    When Radiobutton VereinderenEintragungInsRegisterNichtLängerAls3MonateZurückliegt ist aktiviert
+  Scenario: Die Eintragung des Vereins war vor weniger als drei Monaten
+    When Radiobutton VereinMitEintragungWenigerAls3Monate ist aktiviert
     Then Eingabetextfeld "Im Vereinsregister eingetragener Name"* ist Pflichtfeld
     And Eingabetextfeld "Vereinsregistergericht"* ist Pflichtfeld
     And Eingabetextfeld "Vereinsregister-Nummer"* ist Pflichtfeld

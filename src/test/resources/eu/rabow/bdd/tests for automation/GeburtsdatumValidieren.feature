@@ -1,14 +1,16 @@
+#language:de
 @Validierung
-Feature: Hier werden Äquivalenzklassentests für das Geburtsdatum durchgeführt
-Scenario Outline:
-  Given eine Person wird angelegt
-  When das Geburtsdatum <Wert> eingetragen wird
-  Then wird die Meldung <Meldung> ausgegeben
-  Examples:
+  Funktionalität: Äquivalenzklassentests für das Geburtsdatum
+
+  Szenariogrundriss:
+  Angenommen eine neues Kundenkonto wird angelegt
+  Wenn das Geburtsdatum <Wert> eingetragen wird
+  Dann wird die Meldung <Meldung> ausgegeben
+  Beispiele:
    | Wert | Meldung |
-   |"31.12.1849"  | "Das scheint nicht richtig zu sein" |
-   | "01.01.2081"  | "Das scheint nicht richtig zu sein" |
-   | "15.12.2023" | "Das scheint nicht richtig zu sein" |
+   |"31.12.1849"  | "Bitte überprüfen Sie Ihr Geburtsdatum." |
+   | "01.01.2081"  | "Bitte überprüfen Sie Ihr Geburtsdatum." |
+   | "15.12.2023" | "Bitte überprüfen Sie Ihr Geburtsdatum." |
    |"00.00.0000"  |"Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
    | "12345678901" |"Bitte geben Sie das Datum im Format tt.mm.yyyy an." |
    | "ABC4567EFG" | "Bitte geben Sie das Datum im Format tt.mm.yyyy an." |

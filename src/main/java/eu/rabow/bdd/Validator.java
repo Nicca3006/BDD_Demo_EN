@@ -19,18 +19,16 @@ public class Validator {
     }
 
     private static String validiereName(Person person) {
-//        Set<String> resultat = new HashSet<>();
         String resultatName = "";
         if (person.getName() == null || person.getName().equals("")) {
             resultatName = "Bitte geben Sie Ihren Namen an.";
         } else if (person.getName().length() > 120) {
-            resultatName = "Die Eingabe ist zu lang";
+            resultatName = "Bitte geben Sie einen korrekten Namen an.";
         }
         return resultatName;
     }
 
     private static String validiereGeburtsdatum(Person person) {
-//        Set<String> resultat = new HashSet<>();
         String resultatGeburtsdatum = "";
         if (!person.geburtsdatumIstVorhanden) {
             resultatGeburtsdatum = "Bitte geben Sie Ihr Geburtsdatum an.";
@@ -38,7 +36,7 @@ public class Validator {
             if (person.getGeburtsdatum().isBefore(LocalDate.parse("01.01.1850", dateTimeFormatter))
                     || person.getGeburtsdatum().isAfter(LocalDate.parse("31.12.2080", dateTimeFormatter))
                     || person.getGeburtsdatum().isAfter(LocalDate.now())) {
-                resultatGeburtsdatum = "Das scheint nicht richtig zu sein";
+                resultatGeburtsdatum = "Bitte überprüfen Sie Ihr Geburtsdatum.";
             }
         } else
             resultatGeburtsdatum = "Bitte geben Sie das Datum im Format tt.mm.yyyy an.";

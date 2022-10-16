@@ -6,18 +6,17 @@ Funktionalität: Allgemeine Regeln zum Data Dictionary - Feld Geburtsdatum
     Angenommen eine Person gibt ihr Geburtsdatum ein
     Wenn der Tag der Geburt unbekannt ist
     Dann kann der Tag leer bleiben
-    Und wird das Geburtsdatum gespeichert
 
   Szenario: Geburtsdatum der Person liegt zwischen 1850 und 2080
     Gegeben sei eine Person gibt ihr Geburtsdatum ein
     Wenn das Datum nach 1850 liegt
     Und das Datum vor 2080 liegt
-    Dann wird das Geburtsdatum gespeichert
+    Dann ist das Geburtsdatum gespeichert
 
   Szenario: Geburtsdatum der Person liegt vor heute
     Angenommen eine Person gibt ihr Geburtsdatum ein
     Wenn das Datum vor dem heutigen Tag liegt
-    Dann wird das Geburtsdatum gespeichert
+    Dann ist das Geburtsdatum gespeichert
 
   Szenario: Geburtsdatum der Person wird nicht korrekt validiert
     Angenommen eine Person gibt ihr Geburtsdatum ein

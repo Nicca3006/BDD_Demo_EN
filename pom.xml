@@ -107,7 +107,7 @@
                         <goals>
                             <goal>execute</goal>
                         </goals>
-                        <phase>install</phase>
+                        <phase>verify</phase>
                     </execution>
                 </executions>
             </plugin>

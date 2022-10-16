@@ -11,47 +11,7 @@ import static eu.rabow.bdd.Validator.validiere;
 import static org.junit.Assert.*;
 
 public class DatenfelderSteps {
-    Person person;
+    Person person = new Person();
 
-    @Wenn("der Name nicht mehr als {int} Zeichen hat")
-    public void der_name_nicht_mehr_als_zeichen_hat(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 
-    @Wenn("der Tag der Geburt unbekannt ist")
-    public void der_tag_der_geburt_unbekannt_ist() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Dann("kann der Tag leer bleiben")
-    public void kann_der_tag_leer_bleiben() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Wenn("das Datum nach {int} liegt")
-    public void das_datum_nach_liegt(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Wenn("das Datum vor {int} liegt")
-    public void das_datum_vor_liegt(Integer int1) {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Wenn("das Datum vor dem heutigen Tag liegt")
-    public void das_datum_vor_dem_heutigen_tag_liegt() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
-
-    @Wenn("das Geburtsdatum einen Validierungsfehler enthält")
-    public void das_geburtsdatum_einen_validierungsfehler_enthaelt() {
-        // Write code here that turns the phrase above into concrete actions
-        throw new io.cucumber.java.PendingException();
-    }
 }

@@ -22,14 +22,23 @@ public class StepDefinitions {
     public void eineNeuesKundenkontoWirdAngelegt() {
         person = new Person();
     }
-    @When("der Name mehr als {int} Zeichen hat")
-    public void derNameMehrAlsZeichenHat(Integer int1) {
-        person.setName(RandomStringUtils.random(int1 + 1));
-        Validator.validiere(person);
+
+    @When("der Name leer ist")
+    public void derNameLeerIst() {
+        person.setName("");
+    }
+    @When("das Geburtsdatum leer ist")
+    public void dasGeburtsdatumLeerIst() {
+        person.setGeburtsdatum("");
     }
     @Then("wird die Meldung {string} ausgegeben")
     public void wirdDieMeldungAusgegeben(String string) {
         assertTrue(Validator.validiere(person).contains(string));
+    }
+    @When("der Name mehr als {int} Zeichen hat")
+    public void derNameMehrAlsZeichenHat(Integer int1) {
+        person.setName(RandomStringUtils.random(int1 + 1));
+        Validator.validiere(person);
     }
     @When("Name, Vorname, Geburtsdatum eingegeben werden")
     public void nameVornameGeburtsdatumEingegebenWerden() {

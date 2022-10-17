@@ -18,19 +18,7 @@ public class StepDefinitions {
 
     Person person;
 
-    @Given("eine neues Kundenkonto wird angelegt")
-    public void eineNeuesKundenkontoWirdAngelegt() {
-        person = new Person();
-    }
 
-    @When("der Name leer ist")
-    public void derNameLeerIst() {
-        person.setName("");
-    }
-    @When("das Geburtsdatum leer ist")
-    public void dasGeburtsdatumLeerIst() {
-        person.setGeburtsdatum("");
-    }
     @Then("wird die Meldung {string} ausgegeben")
     public void wirdDieMeldungAusgegeben(String string) {
         assertTrue(Validator.validiere(person).contains(string));

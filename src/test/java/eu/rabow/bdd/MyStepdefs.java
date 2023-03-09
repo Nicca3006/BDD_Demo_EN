@@ -1,27 +1,29 @@
 package eu.rabow.bdd;
 
+import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 
 public class MyStepdefs {
-    @Given("die Person hat das Bestellformular ausgefüllt")
-    public void diePersonHatDasBestellformularAusgefüllt() {;
+
+    @Given("person completed the order form")
+    public void personCompletedTheOrderForm() {
+        throw new PendingException();
     }
 
-    @When("die Person das Formular einreicht")
-    public void diePersonDasFormularEinreicht() {
+    @When("person submits the form")
+    public void personSubmitsTheForm() {
+        throw new PendingException();
     }
 
-    @Then("erhält die Person eine Bestätigungs-E-Mail")
-    public void erhältDiePersonEineBestätigungsEMail() {
+    @Then("person gets a confirmation mail")
+    public void personGetsAConfirmationMail() {
+        throw new PendingException();
     }
 
-    @Given("die Person hat keine Mail im Bestellformular angegeben")
-    public void diePersonHatKeineMailImBestellformularAngegeben() {
-    }
-
-    @Then("kommt ein Hinweis auf die fehlende Mailadresse")
-    public void kommtEinHinweisAufDieFehlendeMailadresse() {
+    @Given("person did not fill in mail in order form")
+    public void personDidNotFillInMailInOrderForm() {
+        throw new PendingException();
     }
 }

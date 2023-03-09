@@ -6,36 +6,36 @@ import java.time.format.DateTimeParseException;
 
 public class Person {
     private String name;
-    private String vorname;
-    private LocalDate geburtsdatum;
-    private String strasse;
-    private String hausnummer;
-    private String plz;
-    private String ort;
+    private String surname;
+    private LocalDate birthday;
+    private String street;
+    private String number;
+    private String zipCode;
+    private String city;
 
-    private String kundennummer;
+    private String accountNo;
 
     boolean dataIsValid = false;
-    boolean geburtsdatumHatRichtigesFormat = true;
-    boolean geburtsdatumIstVorhanden = false;
-    boolean nameIstVorhanden = false;
-    boolean vornameIstVorhanden = false;
+    boolean birthdayFormatCorrect = true;
+    boolean birthdayExists = false;
+    boolean nameExists = false;
+    boolean surnameExists = false;
 
-    public LocalDate getGeburtsdatum() {
-        return geburtsdatum;
+    public LocalDate getBirthday() {
+        return birthday;
     }
 
-    public void setGeburtsdatum(String geburtsdatum) {
-        if (!geburtsdatum.isEmpty()){
-            geburtsdatumIstVorhanden = true;
+    public void setBirthday(String birthday) {
+        if (!birthday.isEmpty()){
+            birthdayExists = true;
             try{
-            this.geburtsdatum = (LocalDate.parse(geburtsdatum, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
+                this.birthday = (LocalDate.parse(birthday, DateTimeFormatter.ofPattern("dd.MM.yyyy")));
             }catch (DateTimeParseException e){
-                geburtsdatumHatRichtigesFormat   = false;
-    }}}
+                birthdayFormatCorrect = false;
+            }}}
 
     public void dataIsValid(){
-        if (geburtsdatumIstVorhanden && nameIstVorhanden && vornameIstVorhanden){
+        if (birthdayExists && nameExists && surnameExists){
             dataIsValid = true;
         }
     }
@@ -46,59 +46,59 @@ public class Person {
 
     public void setName(String name) {
         if (!name.isEmpty()) {
-            nameIstVorhanden = true;
+            nameExists = true;
             this.name = name;
         }
     }
 
-    public String getVorname() {
-        return vorname;
+    public String getSurname() {
+        return surname;
     }
 
-    public void setVorname(String vorname) {
-        if(!vorname.isEmpty()) {
-            vornameIstVorhanden = true;
-            this.vorname = vorname;
+    public void setSurname(String surname) {
+        if(!surname.isEmpty()) {
+            surnameExists = true;
+            this.surname = surname;
         }
     }
 
-    public String getStrasse() {
-        return strasse;
+    public String getStreet() {
+        return street;
     }
 
-    public void setStrasse(String strasse) {
-        this.strasse = strasse;
+    public void setStreet(String street) {
+        this.street = street;
     }
 
-    public String getHausnummer() {
-        return hausnummer;
+    public String getNumber() {
+        return number;
     }
 
-    public void setHausnummer(String hausnummer) {
-        this.hausnummer = hausnummer;
+    public void setNumber(String number) {
+        this.number = number;
     }
 
-    public String getPlz() {
-        return plz;
+    public String getZipCode() {
+        return zipCode;
     }
 
-    public void setPlz(String plz) {
-        this.plz = plz;
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
     }
 
-    public String getOrt() {
-        return ort;
+    public String getCity() {
+        return city;
     }
 
-    public void setOrt(String ort) {
-        this.ort = ort;
+    public void setCity(String city) {
+        this.city = city;
     }
 
-    public String getKundennummer() {
-        return kundennummer;
+    public String getAccountNo() {
+        return accountNo;
     }
 
-    public void setKundennummer(String kundennummer) {
-        this.kundennummer = kundennummer;
+    public void setAccountNo(String accountNo) {
+        this.accountNo = accountNo;
     }
 }

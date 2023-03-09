@@ -9,39 +9,39 @@ public class Validator {
 
     static final DateTimeFormatter dateTimeFormatter = DateTimeFormatter.ofPattern("dd.MM.yyyy");
 
-    public static Set<String> validiere(Person person) {
-        Set<String> resultat = new HashSet<>();
+    public static Set<String> validate(Person person) {
+        Set<String> result = new HashSet<>();
 
-        resultat.add(validiereName(person));
-        resultat.add(validiereGeburtsdatum(person));
+        result.add(validateName(person));
+        result.add(validateBirthday(person));
 
-        return resultat;
+        return result;
     }
 
-    private static String validiereName(Person person) {
-        String resultatName = "";
+    private static String validateName(Person person) {
+        String resultName = "";
         if (person.getName() == null || person.getName().equals("")) {
-            resultatName = "Bitte geben Sie Ihren Namen an.";
+            resultName = "Please fill in your name.";
         } else if (person.getName().length() > 120) {
-            resultatName = "Bitte geben Sie einen korrekten Namen an.";
+            resultName = "Please fill in a correct name.";
         }
-        return resultatName;
+        return resultName;
     }
 
-    private static String validiereGeburtsdatum(Person person) {
-        String resultatGeburtsdatum = "";
-        if (!person.geburtsdatumIstVorhanden) {
-            resultatGeburtsdatum = "Bitte geben Sie Ihr Geburtsdatum an.";
-        } else if (person.geburtsdatumHatRichtigesFormat) {
-            if (person.getGeburtsdatum().isBefore(LocalDate.parse("01.01.1850", dateTimeFormatter))
-                    || person.getGeburtsdatum().isAfter(LocalDate.parse("31.12.2080", dateTimeFormatter))
-                    || person.getGeburtsdatum().isAfter(LocalDate.now())) {
-                resultatGeburtsdatum = "Bitte überprüfen Sie Ihr Geburtsdatum.";
+    private static String validateBirthday(Person person) {
+        String resultBirthday = "";
+        if (!person.birthdayExists) {
+            resultBirthday = "Please fill in your birth date.";
+        } else if (person.birthdayFormatCorrect) {
+            if (person.getBirthday().isBefore(LocalDate.parse("01.01.1850", dateTimeFormatter))
+                    || person.getBirthday().isAfter(LocalDate.parse("31.12.2080", dateTimeFormatter))
+                    || person.getBirthday().isAfter(LocalDate.now())) {
+                resultBirthday = "Please check your birth date.";
             }
         } else
-            resultatGeburtsdatum = "Bitte geben Sie das Datum im Format tt.mm.yyyy an.";
+            resultBirthday = "Please enter the date as dd.mm.yyyy";
 
-            return resultatGeburtsdatum;
+        return resultBirthday;
 
 
     }

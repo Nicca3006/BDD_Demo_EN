@@ -4,7 +4,6 @@ import io.cucumber.java.PendingException;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import io.cucumber.java.de.*;
 import org.apache.commons.lang.RandomStringUtils;
 import org.apache.commons.lang.math.RandomUtils;
 
@@ -18,52 +17,52 @@ public class StepDefinitions {
 
     Person person;
 
-    @Given("eine neues Kundenkonto wird angelegt")
-    public void eineNeuesKundenkontoWirdAngelegt() {
+    @Given("a new personal account is created")
+    public void aNewPersonalAccountIsCreated() {
         person = new Person();
     }
 
-    @When("der Name leer ist")
-    public void derNameLeerIst() {
+    @When("name is empty")
+    public void nameIsEmpty() {
         person.setName("");
     }
-    @When("das Geburtsdatum leer ist")
-    public void dasGeburtsdatumLeerIst() {
-        person.setGeburtsdatum("");
+    @When("birth date is empty")
+    public void birthDateIsEmpty() {
+        person.setBirthday("");
     }
-    @Then("wird die Meldung {string} ausgegeben")
-    public void wirdDieMeldungAusgegeben(String string) {
-        assertTrue(Validator.validiere(person).contains(string));
+    @Then("the message {string} is shown")
+    public void theMessageIsShown(String string) {
+        assertTrue(Validator.validate(person).contains(string));
     }
-    @When("der Name mehr als {int} Zeichen hat")
-    public void derNameMehrAlsZeichenHat(Integer int1) {
+    @When("name has more than {int} characters")
+    public void nameHasMoreThanCharacters(Integer int1) {
         person.setName(RandomStringUtils.random(int1 + 1));
-        Validator.validiere(person);
+        Validator.validate(person);
     }
-    @When("Name, Vorname, Geburtsdatum eingegeben werden")
-    public void nameVornameGeburtsdatumEingegebenWerden() {
+    @When("name, surname, birthday are provided")
+    public void nameSurnameBirthdayAreProvided() {
         person.setName(RandomStringUtils.random(50));
-        person.setVorname(RandomStringUtils.random(20));
-        person.setGeburtsdatum(LocalDateTime.now().toString());
+        person.setSurname(RandomStringUtils.random(20));
+        person.setBirthday(LocalDateTime.now().toString());
     }
 
-    @Then("wird eine neue Kundennummer für die Person vergeben")
-    public void wirdEineNeueKundennummerFürDiePersonVergeben() {
+    @Then("a new customer number for the person is created")
+    public void aNewCustomerNumberForThePersonIsCreated() {
         if (person.dataIsValid){
-            person.setKundennummer(RandomStringUtils.random(8));
-            assertFalse(person.getKundennummer().isEmpty());
+            person.setAccountNo(RandomStringUtils.random(8));
+            assertFalse(person.getAccountNo().isEmpty());
         };
     }
 
-    @When("ein Datum vor {int} oder nach {int} eingetragen wird")
-    public void einDatumVorOderNachEingetragenWird(Integer int1, Integer int2) {
+    @When("a date before {int} or after {int} is provided")
+    public void aDateBeforeOrAfterIsProvided(Integer int1, Integer int2) {
 //        person.setGeburtsdatum(LocalDateTime.now().plusYears(60).toString());
-        person.setGeburtsdatum("30.06.1830");
-        Validator.validiere(person);
+        person.setBirthday("30.06.1830");
+        Validator.validate(person);
     }
 
-    @Wenn("das Geburtsdatum {string} eingetragen wird")
-    public void dasGeburtsdatumWertEingetragenWird(String string) {
-        person.setGeburtsdatum(string);
+    @When("the birth date {string} is entered")
+    public void theBirthdateIsEntered(String string) {
+        person.setBirthday(string);
     }
 }

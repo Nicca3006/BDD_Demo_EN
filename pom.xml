@@ -69,7 +69,7 @@
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>5.6.2</version>
                 <configuration>
-                    <projectName>BDD-Demo</projectName>
+                    <projectName>BDD_Demo_EN</projectName>
                     <skip>false</skip>
                     <outputDirectory>reports/html-reports</outputDirectory>
                     <inputDirectory>target/cucumber-reports</inputDirectory>

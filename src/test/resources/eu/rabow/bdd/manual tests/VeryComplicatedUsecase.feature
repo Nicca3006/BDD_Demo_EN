@@ -214,7 +214,7 @@ Feature: Wenn unser Kunde ein Verein ist, dann wollen wir nicht nur den Namen wi
     And Datei-Upload-Abschnitt “Bescheinigung vom Finanzamt:” ist ausgeblendet
     And Datei-Upload-Abschnitt “Auskunft” ist ausgeblendet
     And Datei-Upload-Abschnitt “Bestätigung” ist ausgeblendet
-  AD Datei-Upload-Abschnitt “Supernachweis” ist ausgeblendet
+    And Datei-Upload-Abschnitt “Supernachweis” ist ausgeblendet
 
     When Checkbox "Wichtige Angabe" ist nicht aktiviert
     Then Datei-Upload-Abschnitt  "Nachweis für wichtige Angabe - nicht älter als 3 Monate" wird ausgeblendet
